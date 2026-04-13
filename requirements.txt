@@ -1,0 +1,15 @@
+# Outils de base pour la donnée et le SIG
+pandas
+geopandas
+shapely
+matplotlib
+
+# Machine Learning et IA
+scikit-learn
+
+# Environnement de travail
+jupyter
+
+# Outils bonus (pour récupérer des routes et faire de belles cartes)
+osmnx
+folium

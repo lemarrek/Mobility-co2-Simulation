@@ -1,0 +1,16 @@
+# Environnements virtuels
+venv/
+env/
+.env
+
+# Dossiers de données
+data/raw/
+data/processed/
+
+# Fichiers générés par Python et Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Fichiers systèmes
+.DS_Store
