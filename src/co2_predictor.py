@@ -45,7 +45,7 @@ if __name__ == "__main__":
     # On allume notre moteur d'IA
     simulateur = CO2Predictor(chemin_fichier)
 
-    # On simule l'arrivée d'une donnée en temps réel (ex: YOLO a détecté un SUV)
+    # On simule l'arrivée d'une donnée en temps réel
     print("\n[Simulation] Nouveau véhicule détecté sur la route...")
     co2_estime = simulateur.predict_vehicle(engine_size=3.5, cylinders=6, fuel_consumption=11.1)
     

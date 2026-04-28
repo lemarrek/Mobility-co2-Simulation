@@ -10,6 +10,6 @@ scikit-learn
 # Environnement de travail
 jupyter
 
-# Outils bonus (pour récupérer des routes et faire de belles cartes)
+# Outils bonus
 osmnx
 folium

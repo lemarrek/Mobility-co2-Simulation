@@ -3,11 +3,10 @@ from co2_predictor import CO2Predictor
 
 print("--- INITIALISATION DU JUMEAU NUMÉRIQUE ---")
 
-# Démarrage de l'Analysis Centre (Ton modèle de Machine Learning)
 chemin_donnees = "../data/raw/CO2 Emissions_Canada.xls"
 simulateur_co2 = CO2Predictor(chemin_donnees)
 
-# Démarrage de la Caméra (YOLO)
+# Démarrage de YOLO
 model = YOLO('yolov8n.pt')
 chemin_image = "../data/raw/traffic_jam.jpg"
 
@@ -42,7 +41,7 @@ for r in resultats:
             # On récupère ses caractéristiques spécifiques
             moteur, cyl, conso = profils_vehicules[nom_classe]
             
-            # On demande à notre IA de calculer le CO2 de CE véhicule précis
+            # On demande à notre IA de calculer le CO2 du véhicule 
             co2_vehicule = simulateur_co2.predict_vehicle(moteur, cyl, conso)
             co2_total += co2_vehicule
 
