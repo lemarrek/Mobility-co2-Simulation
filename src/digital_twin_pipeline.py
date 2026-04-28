@@ -11,9 +11,20 @@ simulateur_co2 = CO2Predictor(chemin_donnees)
 model = YOLO('yolov8n.pt')
 chemin_image = "../data/raw/traffic_jam.jpg"
 
+profils_vehicules = {
+    'car': (2.0, 4, 8.5),         # Voiture standard
+    'truck': (5.0, 8, 18.0),      # Gros pick-up ou camion
+    'bus': (6.0, 8, 25.0),        # Bus urbain
+    'motorcycle': (1.0, 2, 4.5)   # Moto
+}
+
 print("\n--- ANALYSE EN TEMPS RÉEL ---")
 # YOLO regarde l'image
 resultats = model(chemin_image, verbose=False)
+
+# analyse
+vehicules_detectes = {'car': 0, 'truck': 0, 'bus': 0, 'motorcycle': 0}
+co2_total = 0.0
 
 # On compte les véhicules détectés
 nombre_vehicules = 0
@@ -25,18 +36,22 @@ for r in resultats:
         nom_classe = model.names[classe_id]
         
         # Si c'est un véhicule routier, on augmente le compteur
-        if nom_classe in ['car', 'truck', 'bus', 'motorcycle']:
-            nombre_vehicules += 1
-
-print(f"YOLO a détecté : {nombre_vehicules} véhicules sur cette portion de route.")
+        if nom_classe in profils_vehicules:
+            vehicules_detectes[nom_classe] += 1
+            
+            # On récupère ses caractéristiques spécifiques
+            moteur, cyl, conso = profils_vehicules[nom_classe]
+            
+            # On demande à notre IA de calculer le CO2 de CE véhicule précis
+            co2_vehicule = simulateur_co2.predict_vehicle(moteur, cyl, conso)
+            co2_total += co2_vehicule
 
 # Calcul des émissions totales
-if nombre_vehicules > 0:
-    # Pour la simulation, on imagine un véhicule moyen (Moteur 2.0L, 4 Cylindres, Conso 8.5L/100)
-    co2_moyen_par_vehicule = simulateur_co2.predict_vehicle(engine_size=2.0, cylinders=4, fuel_consumption=8.5)
-    
-    # On multiplie par le nombre de voitures vues par YOLO
-    co2_total = nombre_vehicules * co2_moyen_par_vehicule
-    print(f"ÉMISSION TOTALE ESTIMÉE : {co2_total:.2f} g/km de CO2")
+for type_vehicule, quantite in vehicules_detectes.items():
+    if quantite > 0:
+        print(f" - {quantite} {type_vehicule}(s)")
+
+if co2_total > 0:
+    print(f"Émission totale estimée : {co2_total:.2f} g/km de CO2")
 else:
-    print("La route est vide, aucune émission de CO2 détectée !")
+    print("La route est vide, aucune émission détectée !")
