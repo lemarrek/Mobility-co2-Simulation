@@ -2,6 +2,11 @@ import cdsapi
 
 c = cdsapi.Client()
 
+# Hanoi = UTC+7
+# 08:00 locale = 01:00 UTC
+# 14:00 locale = 07:00 UTC
+# 22:00 locale = 15:00 UTC
+
 c.retrieve(
     'reanalysis-era5-single-levels',
     {
@@ -13,13 +18,12 @@ c.retrieve(
             '2m_temperature',
         ],
         'year': '2023',
-        'month': ['01', '07'],   # janvier (saison sèche) + juillet (mousson)
+        'month': ['01', '07'],
         'day': [f'{d:02d}' for d in range(1, 32)],
-        'time': ['08:00', '14:00', '22:00'],  # tes 3 scénarios
-        'area': [21.5, 105.5, 20.5, 106.5],  # bounding box Hanoi [N, W, S, E]
+        'time': ['01:00', '07:00', '15:00'],  # UTC → locale 08h, 14h, 22h
+        'area': [21.5, 105.5, 20.5, 106.5],
         'format': 'netcdf',
     },
-    'era5_hanoi.nc'
+    'era5_hanoi_v2.nc'
 )
-
-print("Téléchargement terminé : era5_hanoi.nc")
+print("Téléchargement terminé : era5_hanoi_v2.nc")
