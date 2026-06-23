@@ -24,7 +24,8 @@ def simuler_microclimat_rue(
 ):
 
     # ÉMISSIONS PAR CATÉGORIE : Q_traffic = Σ (N_i · E_i)
-    # N_i  = débit en veh/s,  E_i = émission en g/s par véhicule
+    # N_i  = débit en veh/s
+    # E_i = émission en g/s par véhicule
     emissions_par_cat = {}
     total_emit_g_s = 0.0
 

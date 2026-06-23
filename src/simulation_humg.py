@@ -5,14 +5,16 @@
 import xarray as xr
 import numpy as np
 
-# --- Constantes sourcées ---
+# Constantes sourcées
 EMISSION_FACTORS = {
     "moto": 72, "car": 150, "bus": 800, "hgv": 1200,
-}  # Source : EEA (2023)
+}
+# Source : EEA (2023)
 SPEED_KMH       = 30
-TREE_CO2_G_PER_S = 21_000 / (365 * 24 * 3600)  # Nowak et al. (2013)
+# Nowak et al. (2013)
+TREE_CO2_G_PER_S = 21_000 / (365 * 24 * 3600)
 
-# --- Paramètres morphologiques HUMG ---
+# Paramètres HUMG 
 HUMG = {
     "hauteur_bat_m":     12,
     "largeur_rue_m":     14,
@@ -20,7 +22,7 @@ HUMG = {
     "densite_arbres_km": 30,
 }
 
-# --- Flotte par scénario horaire (heure locale Hanoi) ---
+# Flotte par scénario horaire (heure locale Hanoi)
 FLOTTE = {
     8:  {"moto": 2200, "car": 600, "bus": 120, "hgv": 30},
     14: {"moto": 1200, "car": 350, "bus": 80,  "hgv": 20},
