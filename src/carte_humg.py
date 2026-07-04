@@ -166,5 +166,3 @@ selector_html = f"""
 m.get_root().html.add_child(folium.Element(selector_html))
 
 m.save('carte_pollution_humg_3scenarios.html')
-print("\nCarte sauvegardee : carte_pollution_humg_3scenarios.html")
-print("Ouvre ce fichier dans ton navigateur et utilise les boutons en haut a gauche.")

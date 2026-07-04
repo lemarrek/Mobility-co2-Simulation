@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # ============================================================
-# CONSTANTES DU MODELE (reprises de simulation_humg.py v4)
+# CONSTANTES DU MODELE (reprises des constantes sourcées)
 # ============================================================
 EMISSION_FACTORS = {"moto": 72, "car": 150, "bus": 800, "hgv": 1200}
 SPEED_KMH        = 30
