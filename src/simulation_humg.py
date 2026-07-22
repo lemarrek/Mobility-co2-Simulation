@@ -153,7 +153,7 @@ def simuler_dynamique(era5: dict) -> dict:
 # EXÉCUTION
 # ============================================================
 print("Chargement ERA5...")
-era5 = charger_era5('era5_hanoi_v2.nc')
+era5 = charger_era5('data/processed/era5_hanoi_v2.nc')
 
 print("\n" + "=" * 65)
 print("SIMULATION DYNAMIQUE — Segment HUMG, Hanoi | Janvier 2023")

@@ -24,6 +24,6 @@ c.retrieve(
         'area': [21.5, 105.5, 20.5, 106.5],
         'format': 'netcdf',
     },
-    'era5_hanoi_v2.nc'
+    'data/processed/era5_hanoi_v2.nc'
 )
 print("Téléchargement terminé : era5_hanoi_v2.nc")

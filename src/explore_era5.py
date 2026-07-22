@@ -1,7 +1,7 @@
 import xarray as xr
 import numpy as np
 
-ds = xr.open_dataset('era5_hanoi.nc')
+ds = xr.open_dataset('data/processed/era5_hanoi.nc')
 
 time_dim = 'valid_time'
 

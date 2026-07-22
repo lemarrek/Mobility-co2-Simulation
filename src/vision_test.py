@@ -5,7 +5,7 @@ print("Chargement de l'oeil de l'IA (YOLO)...")
 model = YOLO('yolov8n.pt')
 
 # On lui donne l'image à regarder
-chemin_image = "../data/raw/traffic_jam.jpg"
+chemin_image = "images/traffic_jam.jpg"
 
 # On lance la détection !
 print("Analyse de l'image en cours...")
@@ -17,6 +17,6 @@ for r in resultats:
     r.show()  
     
     # resultat
-    r.save(filename='resultat_yolo.jpg') 
+    r.save(filename='images/resultat_yolo.jpg') 
 
 print("Analyse terminée !")

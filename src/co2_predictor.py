@@ -39,7 +39,7 @@ class CO2Predictor:
 
 # test
 if __name__ == "__main__":
-    chemin_fichier = "../data/raw/CO2 Emissions_Canada.xls" 
+    chemin_fichier = "data/raw/CO2 Emissions_Canada.csv" 
 
     print("Initialisation...")
     # On allume notre moteur d'IA

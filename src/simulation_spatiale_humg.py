@@ -104,8 +104,8 @@ def taux_retention(pblh_m, vent_m_s) -> float:
 
 
 print("Chargement du reseau et des batiments...")
-G         = ox.load_graphml('humg_network.graphml')
-buildings = gpd.read_file('humg_buildings.gpkg')
+G         = ox.load_graphml('data/processed/humg_network.graphml')
+buildings = gpd.read_file('data/processed/humg_buildings.gpkg')
 edges     = ox.graph_to_gdfs(G, nodes=False)
 
 print(f"  {len(edges)} rues (brutes), {len(buildings)} batiments")
@@ -176,7 +176,7 @@ for heure in [8, 14, 22]:
           f"({df_h.loc[df_h['concentration'].idxmax(), 'nom_rue']})")
 
 df_complet = pd.concat(resultats_par_scenario.values(), ignore_index=True)
-df_complet.to_csv('resultats_spatiaux_humg_3scenarios.csv', index=False)
+df_complet.to_csv('data/raw/resultats_spatiaux_humg_3scenarios.csv', index=False)
 print(f"\nSauvegarde : resultats_spatiaux_humg_3scenarios.csv ({len(df_complet)} lignes)")
 
 for heure, df_h in resultats_par_scenario.items():
@@ -185,7 +185,7 @@ for heure, df_h in resultats_par_scenario.items():
         df_h[["idx", "concentration", "delta_T", "ratio_hw"]],
         left_index=True, right_on="idx", how="inner"
     )
-    edges_h.to_file(f'humg_edges_{heure}h.gpkg', driver='GPKG')
+    edges_h.to_file(f'data/processed/humg_edges_{heure}h.gpkg', driver='GPKG')
     print(f"Sauvegarde : humg_edges_{heure}h.gpkg")
 
 print("\nTermine. Pret pour la cartographie multi-scenarios.")

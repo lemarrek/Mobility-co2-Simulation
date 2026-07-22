@@ -3,12 +3,12 @@ from co2_predictor import CO2Predictor
 
 print("--- INITIALISATION DU JUMEAU NUMÉRIQUE ---")
 
-chemin_donnees = "../data/raw/CO2 Emissions_Canada.xls"
+chemin_donnees = "data/raw/CO2 Emissions_Canada.csv"
 simulateur_co2 = CO2Predictor(chemin_donnees)
 
 # Démarrage de YOLO
 model = YOLO('yolov8n.pt')
-chemin_image = "../data/raw/traffic_jam.jpg"
+chemin_image = "images/traffic_jam.jpg"
 
 profils_vehicules = {
     'car': (2.0, 4, 8.5),         # Voiture standard

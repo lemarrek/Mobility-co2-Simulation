@@ -6,9 +6,9 @@ import branca.colormap as cm
 print("Chargement des resultats spatialises...")
 
 SCENARIOS = {
-    "08h00": {"fichier": "humg_edges_8h.gpkg",  "label": "Pointe matin (PBLH 313 m)"},
-    "14h00": {"fichier": "humg_edges_14h.gpkg", "label": "Apres-midi (PBLH 1037 m)"},
-    "22h00": {"fichier": "humg_edges_22h.gpkg", "label": "Inversion soir (PBLH 170 m)"},
+    "08h00": {"fichier": "data/processed/humg_edges_8h.gpkg",  "label": "Pointe matin (PBLH 313 m)"},
+    "14h00": {"fichier": "data/processed/humg_edges_14h.gpkg", "label": "Apres-midi (PBLH 1037 m)"},
+    "22h00": {"fichier": "data/processed/humg_edges_22h.gpkg", "label": "Inversion soir (PBLH 170 m)"},
 }
 
 gdfs = {}

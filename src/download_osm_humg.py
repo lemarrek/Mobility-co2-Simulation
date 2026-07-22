@@ -25,8 +25,8 @@ buildings = ox.features_from_point(
 print(f"  → {len(buildings)} bâtiments trouvés")
 
 # Sauvegarde pour réutilisation
-ox.save_graphml(G, 'humg_network.graphml')
-buildings.to_file('humg_buildings.gpkg', driver='GPKG')
+ox.save_graphml(G, 'data/processed/humg_network.graphml')
+buildings.to_file('data/processed/humg_buildings.gpkg', driver='GPKG')
 print("\nFichiers sauvegardés : humg_network.graphml, humg_buildings.gpkg")
 
 # --- Aperçu de la première rue ---
