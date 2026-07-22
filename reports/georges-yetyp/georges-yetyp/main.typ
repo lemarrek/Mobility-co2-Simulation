@@ -9,7 +9,7 @@
       Dong Ngac, Bac Tu Liem, \
       Hanoi, Vietnam
     ],
-    logo: image("../../images/logo_HUMG.png", height: 4em),
+    logo: image("/images/logo_HUMG.png", height: 4em),
   ),
   responsable: (
     nom: "Prof. Nguyen Gia Trong",
@@ -117,14 +117,7 @@ The first module developed is a Machine Learning model trained on the public _CO
 The chosen algorithm is *linear regression* (scikit-learn), justified by the mathematically continuous and strongly linear relationship between a combustion engine's characteristics and its emissions. Performance on the test set (20% of the data): *R² = 0.876* and *RMSE = 18.4 g/km* — consistent with published work on similar datasets @mokhtarzadeh2021.
 
 #figure(
-  rect(width: 100%, height: 7cm, fill: rgb("#D9D9D9"), stroke: none)[
-    #align(center + horizon)[
-      #text(fill: rgb("#555555"), style: "italic")[
-        [ FIGURE 1 — Insert here the "Reality vs Prediction CO₂" scatter plot \
-        (screenshot from 01_test.ipynb) ]
-      ]
-    ]
-  ],
+  image("/images/Figure1.png"),
   caption: [Scatter plot: predicted vs actual CO₂ emissions on the test set (g/km). R² = 0.876. Source: execution of 01_test.ipynb.]
 )
 
@@ -133,14 +126,7 @@ The chosen algorithm is *linear regression* (scikit-learn), justified by the mat
 A Computer Vision module using the *YOLOv8n* model was integrated to automatically detect and classify vehicles in road traffic images. The lightweight yolov8n.pt model was chosen to ensure fast inference on standard CPU hardware. On a test image (1920×1080 px), the model detected 45 cars and 2 trucks in under 200 ms, with confidence scores above 0.50 for the majority of detections.
 
 #figure(
-  rect(width: 100%, height: 7cm, fill: rgb("#D9D9D9"), stroke: none)[
-    #align(center + horizon)[
-      #text(fill: rgb("#555555"), style: "italic")[
-        [ FIGURE 2 — Insert here the screenshot from vision_test.py \
-        (traffic image with YOLOv8 detection bounding boxes) ]
-      ]
-    ]
-  ],
+  image("/images/Figure1.png"),
   caption: [YOLOv8n detection on urban road traffic (vision_test.py). Detection bounding boxes by class (car / truck) with confidence scores.]
 )
 
