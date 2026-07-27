@@ -233,10 +233,11 @@
 
     body
 
-    pagebreak()
-
-    set page(header: none)
-
+    //pagebreak()
+    //set page(header: none)
+  
+    show heading.where(level: 1): it => it
+  
     heading(numbering: none, outlined: false, [#trad.appendices])
 
     if annexes-extra != none {
