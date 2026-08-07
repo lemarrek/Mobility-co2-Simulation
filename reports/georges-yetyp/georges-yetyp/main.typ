@@ -178,6 +178,13 @@
       ),
       caption: [Full technology stack of the HUCODT project.]
     )
+
+    == Appendix 5 — Scientific Article Draft
+
+    To support the methodology and findings of the HUCODT framework, a full research article titled _"A GIS-based Framework for Urban Traffic CO₂ Simulation Integrating Vehicle Detection and Atmospheric Conditions"_ was drafted. 
+
+    The complete ~25-page manuscript, co-authored with Dr. Nguyen Gia Trong and Eric Gascard, is provided as an attached supplementary document to this report. It details the complete state of the art, the mathematical demonstration of the microclimate model, and the extended discussion on policy implications for South-East Asian municipalities.
+    #pagebreak()
   ]
 )
 
@@ -340,14 +347,15 @@ implementing the accumulation equation from Peng et al. (2023):
 
 $ C_t = Q_t + (C_(t-1) times R), quad R = op("clip")(1 - u_"eff" / H_"mix", 0, 0.85) $
 
-$Q_t$ = instantaneous emissions; $R$ = dynamic retention rate; $u_"eff"$ = effective
-canyon wind speed (Oke 1988); $H_"mix"$ = effective mixing height derived from PBLH
-and building geometry. When PBLH is low and wind is weak, $R → 0.85$ (strong
-accumulation); when PBLH is high and wind is strong, $R → 0$ (maximum dispersion).
+Here, the mathematical model conceptualizes the street as a 0D "Box" whose virtual lid moves dynamically. $Q_t$ represents the instantaneous emissions, while $R$ defines the dynamic retention rate. The variables $u_"eff"$ (effective canyon wind speed from Oke, 1988) and $H_"mix"$ (effective mixing height derived from the PBLH and building geometry) dictate the atmospheric behavior.
 
-The scientific visualisation module confirmed the hypothesis
-visually: *+30% pollution at 22:00* driven by thermal inversion, despite 60% less
-traffic.
+*Understanding the Limit Cases (Boundary Layer Dynamics):*
+The inclusion of the clipping function (max 0.85) is crucial for numerical stability, representing the physical maximum of pollution trapping before diffusion forces dispersion.
+
+- *The Dispersion Limit ($R arrow 0$):* During the afternoon (Scenario S2, 14:00), solar radiation strongly heats the ground, causing the PBLH to expand up to 1,037 m. The "lid" is lifted. As $H_"mix"$ becomes very large relative to the building height, the ratio $u_"eff" / H_"mix"$ grows, and $R$ collapses toward 0. The street canyon is thoroughly ventilated, washing out residual $C_(t-1)$.
+- *The Accumulation Limit ($R arrow 0.85$):* Conversely, at night (Scenario S3, 22:00), the absence of solar radiation triggers a thermal inversion. The PBLH collapses to a mere 170 m. The "lid" clamps down tightly on the urban canopy. The retention factor $R$ hits its ceiling of 0.85, meaning 85% of the previous hour's pollution remains trapped. 
+
+This mathematical threshold perfectly explains the counter-intuitive phenomenon illustrated in *Figure 4*: even though traffic volume drops by 65% between the afternoon and the night, the collapse of the PBLH physically forces the concentration to spike (+29%), demonstrating that nocturnal urban air quality is completely governed by boundary-layer thermodynamics, not just tailpipe output.
 
 #figure(
   image("/images/Figure4.png", width: 88%),
@@ -446,6 +454,11 @@ simultaneously integrating vehicle detection via computer vision, ML-based emiss
 prediction, ERA5 atmospheric forcing, and interactive GIS visualisation on a complete
 road network in a South-East Asian capital.
 
+*Complementarity with Existing Scientific Approaches:*
+Historically, urban air quality modelling relies on two extremes. On one hand, simple *emission inventories* aggregate traffic counts but remain entirely static, failing to capture the nocturnal thermal trapping that suffocates cities like Hanoi. On the other hand, *Computational Fluid Dynamics (CFD)* models (such as OpenFOAM or ENVI-met) simulate wind flows around 3D building meshes with extreme precision. However, CFD is computationally prohibitive; simulating 24 hours of traffic over a few blocks can take days on a supercomputer, making it completely unsuitable for city-wide GIS mapping or agile policy-making.
+
+HUCODT positions itself in the strategic "sweet spot" between these two extremes. By relying on a 0D/2D parameterized "Box Model" coupled with ERA5 meteorological forcing, it successfully integrates the critical macro-dynamics of the planetary boundary layer (PBLH) at a microscopic computational cost. This approach allows the system to scale effortlessly to 501 road segments — computing realistic accumulation dynamics in seconds on a standard CPU. 
+
 The main finding — nocturnal pollution is dominated by *atmospheric dynamics* rather
 than traffic — has direct policy implications: traffic restrictions targeting morning peaks
 have limited nocturnal impact, whereas interventions on *urban morphology* (road
@@ -485,12 +498,19 @@ coupling was not implemented. The advanced routing task was also paused at week 
 
 *Carbon sink spatialisation:* While vegetation absorption was integrated mathematically into the accumulation equation @nowak2013, the precise spatial mapping of urban trees (e.g., using municipal GIS cadasters or remote sensing) could not be carried out. Absorption is currently estimated without segment-specific tree counts.
 
-== Structural Limitations
+== Structural Limitations and Scalability Challenges
 
-- *No quantitative validation:* simulated concentrations are relative outputs, not absolute regulatory values.
-- *CO₂ model trained on Canadian data:* Trained on Canadian data, the ML model does not fully capture the specific emission profiles of the South-East Asian motorbike fleet.
-- *ERA5 resolution (~31 km):* The ~31 km resolution of ERA5 forces a spatially uniform PBLH, artificially smoothing out local micro-climatic variations.
-- *YOLOv8n motorbike under-detection:* trained on Western images (COCO), the model under-counts motorbikes in dense Asian traffic.
+- *No quantitative validation:* Simulated concentrations are relative outputs capturing spatio-temporal dynamics, not absolute regulatory values calibratable against physical sensors.
+- *CO₂ model trained on Canadian data:* Trained on Canadian tabular datasets, the ML model successfully captures continuous engine physics but does not fully reflect the specific emission profiles of the South-East Asian motorbike fleet (e.g., two-stroke vs. four-stroke combustion efficiency).
+- *ERA5 spatial resolution (~31 km):* The low spatial resolution of ERA5 forces the assumption of a spatially uniform PBLH across the entire study area, artificially smoothing out local micro-climatic variations that occur between dense downtown districts and suburban areas like the HUMG campus.
+- *YOLOv8n structural bias:* Trained primarily on Western images (COCO dataset), the base YOLOv8 model inherently under-counts motorbikes in the extremely dense, overlapping traffic patterns typical of Asian metropolises.
+
+=== Data Quality and the "Infinite Accumulation" Scalability Bug
+A major limitation of relying exclusively on open-source Geographic Information Systems (GIS) emerged during the scaling phase. OpenStreetMap (OSM) is crowd-sourced and presents significant structural data gaps. For instance, approximately 60% of the building footprints downloaded for the HUMG area lacked the `building:levels` attribute, forcing the system to infer heights (defaulting to 12 m). 
+
+More critically, when attempting to scale the spatial simulation from 501 segments to a city-wide graph of over 78,000 edges, the model crashed due to geometric inconsistencies. Many OSM paths (alleys, pedestrian links) had undefined widths ($W = 0$). In the microclimate model, the $H/W$ ratio and the effective wind speed $u_"eff"$ computation triggered division-by-zero errors. This caused the dynamic retention rate ($R$) to fail, generating infinite ($oo$) CO₂ accumulation values that corrupted the Folium visualisation colormap. 
+
+Addressing this required implementing robust data-cleaning pipelines prior to the mathematical execution (e.g., forcing a 3-meter minimum width threshold for unclassified edges and aggressively clipping NumPy tensors), highlighting the fundamental engineering challenge of deploying formal mathematical models on "dirty" real-world data.
 
 == Research Perspectives and Future Work
 
@@ -593,29 +613,72 @@ Copernicus REST API (cdsapi); UTC → UTC+7 timezone management.
 // ════════════════════════════════════════════════════════════
 
 #pagebreak()
-= Development of a Key Engineering Competency
+= Development of Key Engineering Competencies
 
-_*Competency selected:* Concevoir des systèmes centrés données, langage, image et humain — Polytech Grenoble engineering skills framework._
+// ── COMPÉTENCE MÉTIER ────────────────────────────────────────
+== Competency 1 — Designing Systems Centred on Data, Language, Image and Human
 
-*Status: acquired* — this competency was not part of my prior training and was built during the internship.
+_Competency selected from the Polytech Grenoble INFO framework:
+*Concevoir des systèmes centrés données, langage, image et humain.*
+Status: *acquired* — this competency was not part of my prior training._
 
-== What This Competency Means in Practice
+=== Choosing algorithms and models adapted to data and humans
 
-Before this internship, my software projects operated on a single input modality at a time: either structured data, or image processing, or a user interface — never all four simultaneously, and never in a context where each modality was scientifically load-bearing. The defining challenge of HUCODT was precisely that no single modality was sufficient: traffic density is only visible in images; emission quantities only exist as structured numerical data; atmospheric trapping is only representable through a formal physical model; and the output only becomes useful when a non-specialist can read it without assistance. Designing a system that coupled all four without any one layer contaminating the others was the core engineering skill I had to acquire.
+For vehicle detection, YOLOv8n was selected for its ability to run inference on a standard CPU in under 200 ms — a hard constraint imposed by the sensor-free, low-infrastructure deployment context. For CO₂ prediction, linear regression (scikit-learn) was preferred over ensemble methods (Random Forest, XGBoost) for its direct interpretability: the dominant coefficient (β = 42.3 g/km per litre of engine displacement) is readable by a mechanical engineer, not only by a data scientist. For atmospheric dispersion, the temporal accumulation recurrence equation (Peng et al., 2023) was adopted over full CFD simulation because only a network-scale approach could produce a complete GIS deliverable across 501 road segments within the internship timeline.
 
-== How Each Modality Was Confronted and Learned
+=== Structuring data correctly
 
-Image. I had never used an object detection framework before this internship. Learning to operate YOLOv8n — loading pre-trained COCO weights, applying a confidence threshold, mapping raw class labels to a vehicle taxonomy — took the better part of week 5. The first working detection on a real Hanoi traffic scene (Figure 2) was the proof of concept: 45 cars and 2 trucks identified in under 200 ms on a standard CPU. What I learned here was not just the API, but the discipline of treating the image module as a sealed unit whose only output is a vehicle count dictionary — so that everything downstream could be developed and tested independently.
+Three heterogeneous sources were made interoperable: a tabular Canadian CSV (7,385 records), ERA5 NetCDF tensors (Latitude × Longitude × Time), and OpenStreetMap vector geometries (GeoPackage). Each source is validated in isolation before any join. The UTC→UTC+7 misalignment was detected and corrected via xarray before reaching the simulation engine — without this fix, hourly scenarios would have been matched to the wrong meteorological state. Outputs are standardised as GeoPandas GeoDataFrames and exported to GeoPackage, an open format independent of any proprietary GIS software.
 
-Data. Three completely different data sources had to be acquired, cleaned, and made interoperable: a Canadian tabular CSV for ML training, ERA5 NetCDF tensors from a REST API, and OpenStreetMap vector geometries. None of them shared a coordinate system, timezone, or format. The practical skill acquired was pipeline hygiene — validating each source in isolation before any join, and catching the UTC→UTC+7 misalignment early enough not to corrupt the simulation. The CO₂ predictor scatter plot (Figure 1) is the concrete evidence that the data layer worked: R² = 0.876 on a held-out test set, with no systematic bias across the 100–500 g/km range.
+=== Mastering data specificities — in particular language and image
 
-Formal representation (the model as language). The accumulation equation from Peng et al. (2023) — C(s,t) = Q(s,t) − A(s) + C(s,t−1) × R(s,t) — was entirely new to me. I had to understand what each term encodes physically before I could implement it correctly. The key moment was when the supervisor pointed out at week 7 that a static model was scientifically wrong: pollution does not simply track traffic. Implementing the retention coefficient R as a function of PBLH and H/W ratio, and verifying that the 0D engine reproduced the expected nocturnal rebound on mock data before connecting to ERA5, was how I learned to treat a mathematical model as a formal language that must be validated in its own right. Figure 4 shows the result: despite a 65% traffic reduction at 22:00, simulated CO₂ exceeds the afternoon minimum by 29%, driven exclusively by PBLH collapse to 170 m.
+*Image:* road traffic images in Southeast Asian contexts present a critical domain gap — two-wheeled vehicles are systematically under-represented in the COCO training set (Western images). This limitation was identified, documented (Section 5.2), and compensated in the spatial simulation by an adjusted fleet composition profile (65% motorcycles on residential roads). *Formal language:* the temporal accumulation model constitutes the representational language of the atmospheric domain. Understanding the physical semantics of each term (Q, A, R, H_mix) before implementation required a dedicated literature review (Section 3.2.2), treating the mathematical model as a formal specification to be validated in its own right before integration.
 
-Human. The interactive Folium map (Figures 5 and 6) was the modality I underestimated most at the start. Producing an HTML file that a municipality could open in any browser, switch between three time scenarios with a single click, and read per-segment CO₂ values without any GIS training required learning Folium's FeatureGroup system, injecting a custom JavaScript layer-switcher, and anchoring the colour scale globally across all three scenarios so that comparisons are visually honest. The lesson was that a human-facing output is not a cosmetic layer on top of a working system — it is a functional requirement that shapes every upstream design decision.
+=== Validating the relevance of approaches through evaluation
 
-== Evidence of Acquisition
+Each module was validated independently before pipeline integration: the CO₂ predictor on a 20% held-out test set (R² = 0.876, RMSE = 18.4 g/km — Figure 1); the 0D accumulation engine on hard-coded synthetic data before connecting to the ERA5 API; the spatial engine through a counterfactual scenario comparison (S3 vs S4) isolating the pure PBLH effect (+38% nocturnal accumulation attributed to boundary-layer collapse alone). Final qualitative validation was conducted by Dr. Nguyen Gia Trong, who confirmed the physical plausibility of the outputs against published Hanoi pollution dynamics.
 
-The diurnal CO₂ profile (Figure 4) and the interactive map (Figures 5–6) together constitute the clearest proof of competency acquisition: they only exist because all four modalities were successfully coupled. Image detection fed the fleet composition; structured data supplied the emission factors and meteorological forcing; the formal model translated those inputs into spatially differentiated concentrations with temporal memory; and the human interface made the output legible. None of these layers could have produced the result alone, and I had mastered none of them before April 2026.
+=== Respecting norms and recommendations — GDPR and AI Act
+
+The system relies exclusively on open, non-personal data: ERA5 (ECMWF/Copernicus, free for research use), OpenStreetMap (ODbL licence), and CO2 Emissions Canada (public Transport Canada dataset). No personal data is collected or processed. Traffic images used for detection are anonymised test images containing no identifiable faces. Under the European AI Act framework, HUCODT falls in the minimal-risk category: no automated individual decision-making, declared use as an exploratory decision-support tool for urban planning only.
+
+=== Collaborating with end users
+
+The interactive Folium map (Figures 5 and 6) was designed explicitly for non-technical end users: a one-click hourly scenario selector, a global colour scale (green → yellow → red) anchored across all three scenarios for visual comparability, and per-segment popups displaying road name, type, H/W ratio, CO₂ concentration (µg/m³), and ΔT UHI (°C). No GIS software, server infrastructure, or prior training is required to use the deliverable — it opens in any standard web browser.
+
+// ── COMPÉTENCE TRANSVERSE ────────────────────────────────────
+== Competency 2 — Collaborating and Sharing Results as an Engineer
+
+_Competency selected from the Polytech Grenoble transversal framework:
+*Être un ingénieur qui collabore et partage ses résultats.*
+Status: *deepened* — collaboration and communication skills were exercised throughout
+the internship in an international, multilingual, and cross-disciplinary context._
+
+=== Writing clear and accessible documents
+
+Six biweekly progress reports (W1, W4, W7, W10, W13, W16) were written in French for the Polytech supervisors, each synthesising Gantt progress, scientific results, and architectural decisions. The final internship report (this document) was typeset entirely in Typst, with automated bibliography management, bilingual summaries (EN/FR), and a structured table of contents. The co-authored scientific article (~25 pages, English) follows the full IMRaD structure and is written for an international audience with no prior knowledge of the HUMG context — making all results self-contained and accessible beyond the internship.
+
+=== Communicating results with detailed argumentation before professionals
+
+Results were presented and defended before Dr. Nguyen Gia Trong during regular follow-up meetings, conducted entirely in English. This included justifying algorithmic choices (linear regression over Random Forest, YOLOv8n over heavier variants), defending the PBLH accumulation model against the supervisor's critique at week 7 ("your model is static — it ignores nocturnal inversion"), and presenting the final quantified findings (Table 1, Figure 4) as a direct answer to the research question. The co-signed scientific article constitutes the formal written restitution, structured for peer review.
+
+=== Adopting appropriate tools for innovation, reflection, organisation and planning
+
+A Gantt chart (Appendix 1) was created in week 1 to structure 11 tasks over 16 weeks and served as the primary project management tool throughout the internship. When the PBLH scientific bottleneck emerged at week 7, the Gantt was revised dynamically: the "Routing and road graphs" task was paused and the atmospheric dispersion task extended by three weeks — preserving the main deliverable without schedule collapse. The public GitHub repository (*Mobility-co2-Simulation*) provides full version traceability and ensures the reproducibility of all results.
+
+=== Expressing individuality within a group while respecting collective rules
+
+Integrated into a Vietnamese research team with different working practices, I adapted quickly to communication constraints (switching from email to WhatsApp in week 1 following a technical failure) and conducted all technical exchanges in English throughout the sixteen weeks. Key architectural decisions — in particular the choice to validate each module independently before pipeline integration — were proposed on my own initiative and validated by the supervisor, demonstrating technical autonomy within a co-supervised project framework.
+
+=== Respecting intellectual property
+
+All academic sources are cited according to IEEE norms in both the report and the article. Third-party datasets are used in accordance with their respective licences: ERA5 (free research use via Copernicus CDS), OpenStreetMap (ODbL — attribution present in all generated Folium maps), CO2 Emissions Canada (public Transport Canada dataset). The YOLOv8n weights (yolov8n.pt) are distributed under the AGPL-3.0 licence by Ultralytics — non-commercial research use compliant. The project codebase is published on GitHub under an open licence with explicit attribution of all third-party work.
+
+=== Accounting for impacts on energy, GHG emissions, biodiversity and natural resources
+
+The primary purpose of HUCODT is environmental: simulating urban traffic CO₂ emissions to help municipalities identify the most effective reduction levers — urban morphology interventions (street widening, building setbacks, ventilation corridors) rather than traffic restrictions that have limited nocturnal impact. Regarding the system's own footprint: YOLOv8n (the "nano" variant) was selected partly for its low inference energy cost, requiring no GPU. The system requires no permanent server infrastructure — the final deliverable is a self-contained HTML file. ERA5 data is downloaded once and cached locally (era5_hanoi_v2.nc) to avoid repeated API calls and unnecessary network load.
+
+
 
 // ════════════════════════════════════════════════════════════
 // BIBLIOGRAPHY
@@ -627,6 +690,7 @@ The diurnal CO₂ profile (Figure 4) and the interactive map (Figures 5–6) tog
 // DOCUMENTS PRODUCED
 // ════════════════════════════════════════════════════════════
 
+#pagebreak()
 = Documents Produced During the Internship
 
 #figure(
