@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.22)  16 AUG 2026 14:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.22)  16 AUG 2026 14:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -705,7 +705,7 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count308
 \l__pdf_internal_box=\box60
 )
-No file CO2_GIS_Paper_Final.aux.
+(./CO2_GIS_Paper_Final.aux)
 \openout1 = `CO2_GIS_Paper_Final.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
@@ -725,6 +725,7 @@ LaTeX Font Info:    ... okay on input line 83.
 LaTeX Font Info:    Checking defaults for T5/cmr/m/n on input line 83.
 LaTeX Font Info:    Trying to load font information for T5+cmr on input line 83
 .
+
 (/usr/share/texlive/texmf-dist/tex/latex/vntex/t5cmr.fd
 File: t5cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
@@ -794,6 +795,8 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 83.
+
+(./CO2_GIS_Paper_Final.out) (./CO2_GIS_Paper_Final.out)
 \@outlinefile=\write3
 \openout3 = `CO2_GIS_Paper_Final.out'.
 
@@ -887,17 +890,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 121.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 121.
-
-
-LaTeX Warning: Citation `Oke1988' on page 1 undefined on input line 121.
-
 LaTeX Font Info:    Calculating math sizes for size <9.5> on input line 124.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6.64996> on input line 124.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <4.75> on input line 124.
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-ec.enc}
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-ec.enc}
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-mathsy.enc}]
@@ -916,97 +915,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 132.
 
-
-LaTeX Warning: Citation `IEA2023' on page 2 undefined on input line 134.
-
-
-LaTeX Warning: Citation `MoT2022' on page 2 undefined on input line 134.
-
-
-LaTeX Warning: Citation `Oke1988' on page 2 undefined on input line 134.
-
-
-LaTeX Warning: Citation `Vardoulakis2003' on page 2 undefined on input line 134
-.
-
-
-LaTeX Warning: Citation `WHO2021' on page 2 undefined on input line 136.
-
-
-LaTeX Warning: Citation `EEA2023' on page 2 undefined on input line 142.
-
-
-LaTeX Warning: Citation `IPCC2019' on page 2 undefined on input line 142.
-
-
-LaTeX Warning: Citation `Kumar2020' on page 2 undefined on input line 142.
-
-
-LaTeX Warning: Citation `Beloconi2021' on page 2 undefined on input line 142.
-
-
-LaTeX Warning: Citation `GromkeRuck2007' on page 2 undefined on input line 142.
-
-
-
-LaTeX Warning: Citation `Lateb2016' on page 2 undefined on input line 142.
-
-
-LaTeX Warning: Citation `RedmonFarhadi2018' on page 2 undefined on input line 1
-44.
-
-
-LaTeX Warning: Citation `Bochkovskiy2020' on page 2 undefined on input line 144
-.
-
-
-LaTeX Warning: Citation `Ultralytics2023' on page 2 undefined on input line 144
-.
-
-
-LaTeX Warning: Citation `Boeing2017' on page 2 undefined on input line 144.
-
-
-LaTeX Warning: Citation `HaklayWeber2008' on page 2 undefined on input line 144
-.
-
-
-LaTeX Warning: Citation `Deng2023' on page 2 undefined on input line 144.
-
-
-LaTeX Warning: Citation `Hersbach2020' on page 2 undefined on input line 144.
-
 [2]
-
-LaTeX Warning: Citation `RedmonFarhadi2018' on page 3 undefined on input line 1
-51.
-
-
-LaTeX Warning: Citation `Bochkovskiy2020' on page 3 undefined on input line 151
-.
-
-
-LaTeX Warning: Citation `Ultralytics2023' on page 3 undefined on input line 151
-.
-
-
-LaTeX Warning: Citation `Jiang2022' on page 3 undefined on input line 151.
-
-
-LaTeX Warning: Citation `Mandal2022' on page 3 undefined on input line 151.
-
-
-LaTeX Warning: Citation `Fabian2021' on page 3 undefined on input line 151.
-
-
-LaTeX Warning: Citation `Bewley2016' on page 3 undefined on input line 153.
-
-
-LaTeX Warning: Citation `Zhang2022' on page 3 undefined on input line 153.
-
-
-LaTeX Warning: Citation `Apeltauer2015' on page 3 undefined on input line 153.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\mathsurround' on input line 155.
@@ -1019,139 +928,26 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 155.
 
-
-LaTeX Warning: Citation `EEA2023' on page 3 undefined on input line 157.
-
-
-LaTeX Warning: Citation `Jimenez1999' on page 3 undefined on input line 157.
-
-
-LaTeX Warning: Citation `EPA2014' on page 3 undefined on input line 157.
-
-
-LaTeX Warning: Citation `Mokhtarzadeh2021' on page 3 undefined on input line 15
-9.
-
-
-LaTeX Warning: Citation `Biswas2023' on page 3 undefined on input line 159.
-
-
-LaTeX Warning: Citation `Shafique2023' on page 3 undefined on input line 159.
-
-
-LaTeX Warning: Citation `Gu2021' on page 3 undefined on input line 159.
-
-
-LaTeX Warning: Citation `Oke1988' on page 3 undefined on input line 163.
-
-
-LaTeX Warning: Citation `Vardoulakis2003' on page 3 undefined on input line 163
-.
-
-
-LaTeX Warning: Citation `XieCastro2006' on page 3 undefined on input line 163.
-
-
-LaTeX Warning: Citation `Berkowicz2000' on page 3 undefined on input line 163.
-
-
-LaTeX Warning: Citation `GromkeRuck2007' on page 3 undefined on input line 163.
-
-
-
-LaTeX Warning: Citation `Nowak2013' on page 3 undefined on input line 163.
-
-[3]
-
-LaTeX Warning: Citation `Peng2023' on page 4 undefined on input line 165.
-
-
-LaTeX Warning: Citation `Stull1988' on page 4 undefined on input line 174.
-
-
-LaTeX Warning: Citation `Seibert2000' on page 4 undefined on input line 174.
-
-
-LaTeX Warning: Citation `He2019' on page 4 undefined on input line 174.
-
-
-LaTeX Warning: Citation `Zhong2021' on page 4 undefined on input line 174.
-
-
-LaTeX Warning: Citation `Deng2023' on page 4 undefined on input line 176.
-
-
-LaTeX Warning: Citation `Peng2023' on page 4 undefined on input line 176.
-
-
-LaTeX Warning: Citation `Ren2021' on page 4 undefined on input line 176.
-
-
-LaTeX Warning: Citation `Boeing2017' on page 4 undefined on input line 180.
-
-
-LaTeX Warning: Citation `Jordahl2021' on page 4 undefined on input line 180.
-
-
-LaTeX Warning: Citation `Apul2018' on page 4 undefined on input line 182.
-
-
-LaTeX Warning: Citation `Chen2022' on page 4 undefined on input line 182.
-
-[4{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}]
-
-LaTeX Warning: Citation `GrievesVickers2017' on page 5 undefined on input line 
-186.
-
-
-LaTeX Warning: Citation `Ketzler2020' on page 5 undefined on input line 186.
-
-
-LaTeX Warning: Citation `Shahat2021' on page 5 undefined on input line 186.
-
-
-LaTeX Warning: Citation `Fuller2020' on page 5 undefined on input line 186.
-
-
-LaTeX Warning: Citation `Deng2023' on page 5 undefined on input line 190.
-
-
-LaTeX Warning: Citation `Peng2023' on page 5 undefined on input line 190.
-
-
-LaTeX Warning: Citation `He2019' on page 5 undefined on input line 190.
-
-
-LaTeX Warning: Citation `Ketzler2020' on page 5 undefined on input line 190.
-
-
-LaTeX Warning: Citation `Shahat2021' on page 5 undefined on input line 190.
-
-
-LaTeX Warning: Citation `Peng2023' on page 5 undefined on input line 197.
-
-[5]
+[3] [4{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}] [5]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 99.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-
-LaTeX Warning: Reference `fig:workflow' on page 6 undefined on input line 209.
-
 LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 2
 12.
+
 (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 212.
-<figures/image1.png, id=62, 426.393pt x 44.3475pt>
+<figures/image1.png, id=354, 426.393pt x 44.3475pt>
 File: figures/image1.png Graphic file (type png)
 <use figures/image1.png>
 Package pdftex.def Info: figures/image1.png  used on input line 220.
@@ -1167,17 +963,9 @@ LaTeX Font Info:    Trying to load font information for T5+lmr on input line 22
 
 (/usr/share/texmf/tex/latex/lm/t5lmr.fd
 File: t5lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-LaTeX Warning: Reference `fig:studyarea' on page 6 undefined on input line 227.
-
-
-
-LaTeX Warning: Citation `HanoiDoC2021' on page 6 undefined on input line 227.
-
-[6{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-t5.enc} <./figures/image1.png>]
-<figures/image2.png, id=82, 426.0645pt x 256.5585pt>
+) [6{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc
+/dvips/lm/lm-t5.enc} <./figures/image1.png>]
+<figures/image2.png, id=374, 426.0645pt x 256.5585pt>
 File: figures/image2.png Graphic file (type png)
 <use figures/image2.png>
 Package pdftex.def Info: figures/image2.png  used on input line 231.
@@ -1203,23 +991,8 @@ lmtt/b/n/12 simulation_spatiale_humg.py\T1/lmr/bx/n/12 (-20) )|
  []
 
 
-LaTeX Warning: Reference `eq:recurrence' on page 8 undefined on input line 256.
-
-
-
-LaTeX Warning: Citation `Oke1988' on page 8 undefined on input line 267.
-
-
 LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <12> not available
 (Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 275.
-
-
-LaTeX Warning: Citation `Ultralytics2023' on page 8 undefined on input line 276
-.
-
-
-LaTeX Warning: Reference `sec:limitations' on page 8 undefined on input line 27
-6.
 
 [8{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]
 
@@ -1235,13 +1008,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 278.
 
 
-LaTeX Warning: Citation `Mokhtarzadeh2021' on page 9 undefined on input line 27
-9.
-
-
-LaTeX Warning: Citation `Peng2023' on page 9 undefined on input line 282.
-
-
 Underfull \hbox (badness 10000) in alignment at lines 304--304
 [][][] 
  []
@@ -1250,12 +1016,6 @@ Underfull \hbox (badness 10000) in alignment at lines 304--304
 Underfull \hbox (badness 10000) in alignment at lines 327--327
 [][][][][] 
  []
-
-
-LaTeX Warning: Citation `Hersbach2020' on page 10 undefined on input line 332.
-
-
-LaTeX Warning: Citation `CDS2024' on page 10 undefined on input line 332.
 
 
 Underfull \hbox (badness 10000) in alignment at lines 346--346
@@ -1268,10 +1028,6 @@ Underfull \hbox (badness 10000) in alignment at lines 364--364
  []
 
 [10]
-
-LaTeX Warning: Reference `tab:yolo' on page 11 undefined on input line 372.
-
-
 Underfull \hbox (badness 10000) in alignment at lines 389--389
 [][][][][] 
  []
@@ -1288,7 +1044,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 392.
 
-<figures/image3.png, id=132, 941.5175pt x 937.5025pt>
+<figures/image3.png, id=422, 941.5175pt x 937.5025pt>
 File: figures/image3.png Graphic file (type png)
 <use figures/image3.png>
 Package pdftex.def Info: figures/image3.png  used on input line 398.
@@ -1307,9 +1063,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 403.
 
 
-LaTeX Warning: Reference `tab:results' on page 12 undefined on input line 405.
-
-
 Underfull \hbox (badness 10000) in alignment at lines 420--420
 [][][][][] 
  []
@@ -1319,155 +1072,45 @@ Underfull \hbox (badness 10000) in alignment at lines 440--440
 [][][][][] 
  []
 
-<figures/image4.png, id=151, 417.5235pt x 259.515pt>
+<figures/image4.png, id=437, 417.5235pt x 259.515pt>
 File: figures/image4.png Graphic file (type png)
 <use figures/image4.png>
 Package pdftex.def Info: figures/image4.png  used on input line 449.
 (pdftex.def)             Requested size: 400.61703pt x 249.01671pt.
-<figures/image5.png, id=152, 317.6595pt x 152.0955pt>
+<figures/image5.png, id=438, 317.6595pt x 152.0955pt>
 File: figures/image5.png Graphic file (type png)
 <use figures/image5.png>
 Package pdftex.def Info: figures/image5.png  used on input line 460.
 (pdftex.def)             Requested size: 145.68144pt x 69.75125pt.
-<figures/image6.png, id=153, 320.2875pt x 153.081pt>
+<figures/image6.png, id=439, 320.2875pt x 153.081pt>
 File: figures/image6.png Graphic file (type png)
 <use figures/image6.png>
 Package pdftex.def Info: figures/image6.png  used on input line 465.
 (pdftex.def)             Requested size: 145.68144pt x 69.62859pt.
-<figures/image7.png, id=154, 320.2875pt x 153.4095pt>
+<figures/image7.png, id=440, 320.2875pt x 153.4095pt>
 File: figures/image7.png Graphic file (type png)
 <use figures/image7.png>
 Package pdftex.def Info: figures/image7.png  used on input line 470.
 (pdftex.def)             Requested size: 145.68144pt x 69.778pt.
-[13 <./figures/image4.png>]
-
-LaTeX Warning: Reference `tab:params' on page 14 undefined on input line 479.
-
-
-LaTeX Warning: Reference `sec:uncertainty' on page 14 undefined on input line 4
-79.
-
-
-LaTeX Warning: Citation `Oke1988' on page 14 undefined on input line 487.
-
-
-LaTeX Warning: Citation `Peng2023' on page 14 undefined on input line 487.
-
-
-LaTeX Warning: Citation `Deng2023' on page 14 undefined on input line 487.
-
-
-LaTeX Warning: Citation `Oke1988' on page 14 undefined on input line 492.
-
-
-LaTeX Warning: Citation `Vardoulakis2003' on page 14 undefined on input line 49
-2.
-
-[14 <./figures/image5.png> <./figures/image6.png> <./figures/image7.png>]
-
-LaTeX Warning: Reference `tab:sensitivity' on page 15 undefined on input line 5
-00.
-
-
+[13 <./figures/image4.png>] [14 <./figures/image5.png> <./figures/image6.png> <
+./figures/image7.png>]
 Underfull \hbox (badness 10000) in alignment at lines 516--516
 [][][][][] 
  []
 
-
-LaTeX Warning: Citation `Deng2023' on page 15 undefined on input line 522.
-
-
-LaTeX Warning: Citation `Peng2023' on page 15 undefined on input line 522.
-
-
-LaTeX Warning: Citation `Oke1988' on page 15 undefined on input line 522.
-
-
-LaTeX Warning: Citation `Vardoulakis2003' on page 15 undefined on input line 52
-2.
-
-
-LaTeX Warning: Citation `Ren2021' on page 15 undefined on input line 522.
-
-[15]
-
-LaTeX Warning: Citation `Deng2023' on page 16 undefined on input line 531.
-
-
-LaTeX Warning: Citation `He2019' on page 16 undefined on input line 533.
-
-
-LaTeX Warning: Citation `Zhong2021' on page 16 undefined on input line 533.
-
-
-LaTeX Warning: Citation `GromkeRuck2007' on page 16 undefined on input line 535
-.
-
-
-LaTeX Warning: Citation `Vardoulakis2003' on page 16 undefined on input line 53
-5.
-
-
-LaTeX Warning: Citation `Kumar2020' on page 16 undefined on input line 539.
-
-
-LaTeX Warning: Citation `Deng2023' on page 16 undefined on input line 539.
-
-
-LaTeX Warning: Citation `Chen2022' on page 16 undefined on input line 541.
-
-
-LaTeX Warning: Citation `GromkeRuck2007' on page 16 undefined on input line 541
-.
-
-
-LaTeX Warning: Citation `Tominaga2011' on page 16 undefined on input line 541.
-
-
-LaTeX Warning: Citation `Fuller2020' on page 16 undefined on input line 546.
-
-
-LaTeX Warning: Citation `MoT2022' on page 16 undefined on input line 548.
-
-[16]
-
-LaTeX Warning: Citation `Nowak2013' on page 17 undefined on input line 552.
-
-
-LaTeX Warning: Citation `Deng2023' on page 17 undefined on input line 572.
-
-
-LaTeX Warning: Citation `Peng2023' on page 17 undefined on input line 572.
-
-
-LaTeX Warning: Citation `Ren2021' on page 17 undefined on input line 572.
-
-[17] [18] [19] [20] [21] [22] (./CO2_GIS_Paper_Final.aux)
+[15] [16] [17] [18] [19] [20] [21] [22] (./CO2_GIS_Paper_Final.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `CO2_GIS_Paper_Final.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `CO2_GIS_Paper_Final.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  194E95FE98CAA515B59E1DACFB42D12A;11361.
+Package rerunfilecheck Info: File `CO2_GIS_Paper_Final.out' has not changed.
+(rerunfilecheck)             Checksum: 194E95FE98CAA515B59E1DACFB42D12A;11361.
  ) 
 Here is how much of TeX's memory you used:
- 17960 strings out of 474222
- 286533 string characters out of 5748732
- 1941975 words of memory out of 5000000
- 39419 multiletter control sequences out of 15000+600000
+ 18017 strings out of 474222
+ 287534 string characters out of 5748732
+ 1942975 words of memory out of 5000000
+ 39470 multiletter control sequences out of 15000+600000
  733566 words of font info for 324 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,15n,79p,2012b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1486,10 +1129,10 @@ texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/l
 msy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/f
 onts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtko10
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on CO2_GIS_Paper_Final.pdf (22 pages, 2228807 bytes).
+Output written on CO2_GIS_Paper_Final.pdf (22 pages, 2235907 bytes).
 PDF statistics:
- 434 PDF objects out of 1000 (max. 8388607)
- 341 compressed objects within 4 object streams
+ 686 PDF objects out of 1000 (max. 8388607)
+ 591 compressed objects within 6 object streams
  153 named destinations out of 1000 (max. 500000)
- 93732 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 94116 words of extra memory for PDF output out of 106986 (max. 10000000)
 
