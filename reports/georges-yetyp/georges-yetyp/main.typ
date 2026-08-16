@@ -679,6 +679,34 @@ All academic sources are cited according to IEEE norms in both the report and th
 The primary purpose of HUCODT is environmental: simulating urban traffic CO₂ emissions to help municipalities identify the most effective reduction levers — urban morphology interventions (street widening, building setbacks, ventilation corridors) rather than traffic restrictions that have limited nocturnal impact. Regarding the system's own footprint: YOLOv8n (the "nano" variant) was selected partly for its low inference energy cost, requiring no GPU. The system requires no permanent server infrastructure — the final deliverable is a self-contained HTML file. ERA5 data is downloaded once and cached locally (era5_hanoi_v2.nc) to avoid repeated API calls and unnecessary network load.
 
 
+// ════════════════════════════════════════════════════════════
+// IX. TRANSITION ÉCOLOGIQUE POUR UN DÉVELOPPEMENT SOUTENABLE
+// ════════════════════════════════════════════════════════════
+
+#pagebreak()
+= Transition Écologique pour un Développement Soutenable (TEDS)
+
+== Bilan carbone et outil Mobilan
+
+#figure(
+  image("/images/mobilan.png", width: 88%), 
+  caption: [Capture d'écran de l'onglet « Mobilités » de l'outil Mobilan.]
+)
+
+La réalisation de la simulation Mobilan en amont de ce stage a constitué un exercice de lucidité indispensable. Effectuer une mobilité internationale de 16 semaines au Vietnam implique inévitablement un trajet long-courrier, ce qui sature instantanément un bilan carbone annuel individuel. 
+
+Bien que l'outil n'ait pas pu modifier le choix de mon mode de transport principal vers l'Asie (par manque d'alternatives bas-carbone réalistes sur une telle distance), il a eu un impact direct sur mes décisions du quotidien. Conscient de l'empreinte initiale de ce vol — à laquelle se sont ajoutés les déplacements internationaux de mes proches venus me rendre visite durant l'été —, j'ai tenu à minimiser mon impact local. L'outil m'a poussé à privilégier la mobilité active et les transports en commun pour mes trajets quotidiens vers le campus de la HUMG ou mes déplacements en ville, plutôt que de recourir systématiquement aux très populaires deux-roues motorisés. Mobilan agit ainsi comme un excellent révélateur : si l'impact d'un voyage intercontinental est parfois incontournable dans un cursus, il renforce le devoir d'adopter des choix locaux nettement plus sobres.
+
+== Politique RSE de l'institution et axes d'amélioration
+
+L'Université des Mines et de la Géologie de Hanoï (HUMG) est historiquement ancrée dans l'ingénierie extractive. Toutefois, on observe aujourd'hui une évolution de sa politique de recherche vers les enjeux de transition écologique et de ville durable. Le soutien académique accordé à mon projet _HUCODT_ (modélisation de la pollution urbaine via l'IA) prouve la volonté de l'institution de s'engager activement dans la résolution des problèmes environnementaux majeurs du Vietnam, notamment la qualité de l'air.
+
+*Si je pouvais faire différemment dans cette structure, comment ferais-je ?*
+
+Si j'avais la possibilité d'orienter les actions RSE de l'université et du laboratoire, j'agirais sur deux leviers internes liés à ma spécialité :
+- *Le déploiement d'une politique « Green IT » :* La recherche en Intelligence Artificielle et en modélisation spatiale est particulièrement énergivore. Je proposerais la mise en place de directives pour optimiser les temps de calcul des serveurs et systématiser l'utilisation de modèles frugaux (à l'image de l'architecture allégée YOLOv8n que nous avons privilégiée pour notre outil). L'objectif serait de limiter strictement l'empreinte carbone numérique liée aux travaux du département.
+- *L'application locale de nos propres recherches :* L'université crée des outils de diagnostic pour la ville, mais gagnerait à agir sur son propre domaine. Nos simulations ayant démontré la forte accumulation nocturne de CO₂ liée à la morphologie urbaine, je proposerais un plan d'aménagement du campus intégrant des "corridors de ventilation" végétaux ou la piétonnisation partielle des abords de la faculté. L'idée serait de faire de la HUMG le premier terrain d'application des solutions écologiques qu'elle conçoit.
+
 
 // ════════════════════════════════════════════════════════════
 // BIBLIOGRAPHY

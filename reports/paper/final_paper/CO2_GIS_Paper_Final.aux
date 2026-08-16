@@ -1,0 +1,235 @@
+\relax 
+\providecommand\babel@aux[2]{}
+\@nameuse{bbl@beforestart}
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{Oke1988}
+\babel@aux{english}{}
+\citation{IEA2023}
+\citation{MoT2022}
+\citation{Oke1988}
+\citation{Vardoulakis2003}
+\citation{WHO2021}
+\citation{EEA2023}
+\citation{IPCC2019}
+\citation{Kumar2020}
+\citation{Beloconi2021}
+\citation{GromkeRuck2007}
+\citation{Lateb2016}
+\citation{RedmonFarhadi2018}
+\citation{Bochkovskiy2020}
+\citation{Ultralytics2023}
+\citation{Boeing2017}
+\citation{HaklayWeber2008}
+\citation{Deng2023}
+\citation{Hersbach2020}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Urban Traffic and CO\textsubscript  {2} Emissions}{2}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Existing Approaches}{2}{subsection.1.2}\protected@file@percent }
+\citation{RedmonFarhadi2018}
+\citation{Bochkovskiy2020}
+\citation{Ultralytics2023}
+\citation{Jiang2022}
+\citation{Mandal2022}
+\citation{Fabian2021}
+\citation{Bewley2016}
+\citation{Zhang2022}
+\citation{Apeltauer2015}
+\citation{EEA2023}
+\citation{Jimenez1999}
+\citation{EPA2014}
+\citation{Mokhtarzadeh2021}
+\citation{Biswas2023}
+\citation{Shafique2023}
+\citation{Gu2021}
+\citation{Oke1988}
+\citation{Vardoulakis2003}
+\citation{XieCastro2006}
+\citation{Berkowicz2000}
+\citation{GromkeRuck2007}
+\citation{Nowak2013}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Vehicle Detection and Traffic Monitoring}{3}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Traffic CO\textsubscript  {2} Emission Estimation}{3}{subsection.2.2}\protected@file@percent }
+\citation{Peng2023}
+\citation{Stull1988}
+\citation{Seibert2000}
+\citation{He2019}
+\citation{Zhong2021}
+\citation{Deng2023}
+\citation{Peng2023}
+\citation{Ren2021}
+\citation{Boeing2017}
+\citation{Jordahl2021}
+\citation{Apul2018}
+\citation{Chen2022}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Street Canyon Models and Urban Atmospheric Dispersion}{4}{subsection.2.3}\protected@file@percent }
+\newlabel{eq:boxmodel}{{1}{4}{Street Canyon Models and Urban Atmospheric Dispersion}{equation.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Planetary Boundary Layer Dynamics and Urban Pollution}{4}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}GIS-based Air Pollution Mapping}{4}{subsection.2.5}\protected@file@percent }
+\citation{GrievesVickers2017}
+\citation{Ketzler2020}
+\citation{Shahat2021}
+\citation{Fuller2020}
+\citation{Deng2023}
+\citation{Peng2023}
+\citation{He2019}
+\citation{Ketzler2020}
+\citation{Shahat2021}
+\citation{Peng2023}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6}Digital Twins for Urban Air Quality}{5}{subsection.2.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.7}Research Gap and Contributions}{5}{subsection.2.7}\protected@file@percent }
+\citation{HanoiDoC2021}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Proposed Framework}{6}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Overall Architecture and Research Workflow}{6}{subsection.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces HUCODT end-to-end research workflow: data inputs, processing modules, and output deliverables.}}{6}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:workflow}{{1}{6}{HUCODT end-to-end research workflow: data inputs, processing modules, and output deliverables}{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Study Area}{6}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Study area: 501 road segments within 1.5~km radius of HUMG campus, {\fontencoding  {T5}\selectfont  Cầu Giấy} District, Hanoi (21.0697°N, 105.7708°E). Road classes indicated by colour. Basemap: OpenStreetMap/CartoDB Positron.}}{7}{figure.caption.2}\protected@file@percent }
+\newlabel{fig:studyarea}{{2}{7}{Study area: 501 road segments within 1.5~km radius of HUMG campus, {\fontencoding {T5}\selectfont Cầu Giấy} District, Hanoi (21.0697°N, 105.7708°E). Road classes indicated by colour. Basemap: OpenStreetMap/CartoDB Positron}{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Step-by-Step Execution Procedure}{7}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Step 1 --- Data Acquisition (\texttt  {download\_era5\_hanoi.py})}{7}{subsubsection.3.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Step 2 --- Road Network and Building Data Extraction (\texttt  {02\_map\_simulation.ipynb})}{7}{subsubsection.3.3.2}\protected@file@percent }
+\citation{Oke1988}
+\citation{Ultralytics2023}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}Step 3 --- Vehicle Detection and Emission Rate Computation (\texttt  {digital\_twin\_pipeline.py})}{8}{subsubsection.3.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Step 4 --- Multi-scenario Spatial Simulation (\texttt  {simulation\_spatiale\_humg.py})}{8}{subsubsection.3.3.4}\protected@file@percent }
+\newlabel{eq:recurrence}{{2}{8}{Step 4 --- Multi-scenario Spatial Simulation (\texttt {simulation\_spatiale\_humg.py})}{equation.3.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}Step 5 --- Interactive GIS Map Generation (\texttt  {carte\_humg.py})}{8}{subsubsection.3.3.5}\protected@file@percent }
+\citation{Mokhtarzadeh2021}
+\citation{Peng2023}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Vehicle Detection Module (\texttt  {vision\_test.py})}{9}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}CO\textsubscript  {2} Estimation Module (\texttt  {co2\_predictor.py})}{9}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Atmospheric Dispersion Engine (\texttt  {simulation\_humg.py~v4})}{9}{subsection.3.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Key Parameters}{9}{subsection.3.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Key simulation parameters and data sources.}}{9}{table.caption.3}\protected@file@percent }
+\newlabel{tab:params}{{1}{9}{Key simulation parameters and data sources}{table.caption.3}{}}
+\citation{Hersbach2020}
+\citation{CDS2024}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experimental Simulation Setup}{10}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Traffic Dataset and Fleet Composition}{10}{subsection.4.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Vehicle class technical profiles and EEA 2023 CO\textsubscript  {2} emission factors used in the simulation.}}{10}{table.caption.4}\protected@file@percent }
+\newlabel{tab:fleet}{{2}{10}{Vehicle class technical profiles and EEA 2023 CO\textsubscript {2} emission factors used in the simulation}{table.caption.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Meteorological Dataset (ERA5)}{10}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces ERA5 meteorological conditions for the three simulation scenarios (April 2026, Hanoi area).}}{10}{table.caption.5}\protected@file@percent }
+\newlabel{tab:era5}{{3}{10}{ERA5 meteorological conditions for the three simulation scenarios (April 2026, Hanoi area)}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Evaluation Scenarios and Scenario Design}{11}{subsection.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Experimental scenario design including counterfactual Scenario S4 for attribution analysis.}}{11}{table.caption.6}\protected@file@percent }
+\newlabel{tab:scenarios}{{4}{11}{Experimental scenario design including counterfactual Scenario S4 for attribution analysis}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Simulation Results}{11}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Vehicle Detection Results}{11}{subsection.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces YOLOv8n vehicle detection results on the Hanoi traffic test image and corresponding CO\textsubscript  {2} emission estimates.}}{11}{table.caption.7}\protected@file@percent }
+\newlabel{tab:yolo}{{5}{11}{YOLOv8n vehicle detection results on the Hanoi traffic test image and corresponding CO\textsubscript {2} emission estimates}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}CO\textsubscript  {2} Predictor Supporting the Simulation Framework}{11}{subsection.5.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Predicted vs. actual CO\textsubscript  {2} emission rate (g/km) for the LinearRegression model on the held-out test set ($R^2 = 0.876$, RMSE~$= 18.4$~g/km).}}{12}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:scatter}{{3}{12}{Predicted vs. actual CO\textsubscript {2} emission rate (g/km) for the LinearRegression model on the held-out test set ($R^2 = 0.876$, RMSE~$= 18.4$~g/km)}{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Simulated Spatial Distribution of CO\textsubscript  {2}}{12}{subsection.5.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Mean and maximum simulated CO\textsubscript  {2} concentrations per scenario across 501 road segments.}}{12}{table.caption.9}\protected@file@percent }
+\newlabel{tab:results}{{6}{12}{Mean and maximum simulated CO\textsubscript {2} concentrations per scenario across 501 road segments}{table.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Road-type Concentration Analysis}{13}{subsection.5.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Mean simulated CO\textsubscript  {2} concentrations by road type and scenario ($\mu $g/m\textsuperscript  {3}). H/W values represent mean canyon ratio per road class.}}{13}{table.caption.10}\protected@file@percent }
+\newlabel{tab:roadtype}{{7}{13}{Mean simulated CO\textsubscript {2} concentrations by road type and scenario ($\mu $g/m\textsuperscript {3}). H/W values represent mean canyon ratio per road class}{table.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Simulated Atmospheric Effect Analysis}{13}{subsection.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Diurnal simulated CO\textsubscript  {2} concentration profile versus traffic factor and PBLH across three scenarios. Despite a 65\% traffic reduction from 08:00 to 22:00, the simulated concentration remains 29\% above the afternoon minimum, attributed to modelled PBLH collapse from 1,037~m to 170~m.}}{13}{figure.caption.11}\protected@file@percent }
+\newlabel{fig:twinaxis}{{4}{13}{Diurnal simulated CO\textsubscript {2} concentration profile versus traffic factor and PBLH across three scenarios. Despite a 65\% traffic reduction from 08:00 to 22:00, the simulated concentration remains 29\% above the afternoon minimum, attributed to modelled PBLH collapse from 1,037~m to 170~m}{figure.caption.11}{}}
+\citation{Oke1988}
+\citation{Peng2023}
+\citation{Deng2023}
+\citation{Oke1988}
+\citation{Vardoulakis2003}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.6}Interactive GIS Visualisation}{14}{subsection.5.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Interactive GIS map: simulated CO\textsubscript  {2} concentration choropleth for scenarios S1 (08:00), S2 (14:00), and S3 (22:00). The green--yellow--red colour scale is shared across scenarios for visual comparability.}}{14}{figure.caption.12}\protected@file@percent }
+\newlabel{fig:map}{{5}{14}{Interactive GIS map: simulated CO\textsubscript {2} concentration choropleth for scenarios S1 (08:00), S2 (14:00), and S3 (22:00). The green--yellow--red colour scale is shared across scenarios for visual comparability}{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.7}Model Assumptions}{14}{subsection.5.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.8}Model Credibility Assessment}{14}{subsection.5.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.8.1}Verification of Implementation}{14}{subsubsection.5.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.8.2}Physical Consistency}{14}{subsubsection.5.8.2}\protected@file@percent }
+\citation{Deng2023}
+\citation{Peng2023}
+\citation{Oke1988}
+\citation{Vardoulakis2003}
+\citation{Ren2021}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.8.3}Scenario Validation}{15}{subsubsection.5.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.8.4}Sensitivity Analysis}{15}{subsubsection.5.8.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Sensitivity analysis: change in mean simulated CO\textsubscript  {2} concentration ($\mu $g/m\textsuperscript  {3}) under $\pm $20\% perturbation of key input parameters (baseline: S3 nocturnal scenario, mean $= 19.16\tmspace  +\thickmuskip {.2777em}\mu $g/m\textsuperscript  {3}).}}{15}{table.caption.13}\protected@file@percent }
+\newlabel{tab:sensitivity}{{8}{15}{Sensitivity analysis: change in mean simulated CO\textsubscript {2} concentration ($\mu $g/m\textsuperscript {3}) under $\pm $20\% perturbation of key input parameters (baseline: S3 nocturnal scenario, mean $= 19.16\;\mu $g/m\textsuperscript {3})}{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.8.5}Comparison with Published Atmospheric Behaviour}{15}{subsubsection.5.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Discussion}{15}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Interpretation of the Nocturnal Accumulation Pattern}{15}{subsection.6.1}\protected@file@percent }
+\citation{Deng2023}
+\citation{He2019}
+\citation{Zhong2021}
+\citation{GromkeRuck2007}
+\citation{Vardoulakis2003}
+\citation{Kumar2020}
+\citation{Deng2023}
+\citation{Chen2022}
+\citation{GromkeRuck2007}
+\citation{Tominaga2011}
+\citation{Fuller2020}
+\citation{MoT2022}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Comparison with Related Studies}{16}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Limitations}{16}{subsection.6.3}\protected@file@percent }
+\newlabel{sec:limitations}{{6.3}{16}{Limitations}{subsection.6.3}{}}
+\citation{Nowak2013}
+\citation{Deng2023}
+\citation{Peng2023}
+\citation{Ren2021}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Uncertainty Analysis}{17}{subsection.6.4}\protected@file@percent }
+\newlabel{sec:uncertainty}{{6.4}{17}{Uncertainty Analysis}{subsection.6.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{17}{section.7}\protected@file@percent }
+\bibcite{Apeltauer2015}{1}
+\bibcite{Apul2018}{2}
+\bibcite{Beloconi2021}{3}
+\bibcite{Berkowicz2000}{4}
+\bibcite{Bewley2016}{5}
+\bibcite{Biswas2023}{6}
+\bibcite{Bochkovskiy2020}{7}
+\bibcite{Boeing2017}{8}
+\bibcite{CDS2024}{9}
+\bibcite{Chen2022}{10}
+\bibcite{Deng2023}{11}
+\bibcite{EPA2014}{12}
+\bibcite{EEA2023}{13}
+\bibcite{Fabian2021}{14}
+\bibcite{Fuller2020}{15}
+\bibcite{GrievesVickers2017}{16}
+\bibcite{GromkeRuck2007}{17}
+\bibcite{Gu2021}{18}
+\bibcite{HaklayWeber2008}{19}
+\bibcite{HanoiDoC2021}{20}
+\bibcite{He2019}{21}
+\bibcite{Hersbach2020}{22}
+\bibcite{IEA2023}{23}
+\bibcite{IPCC2019}{24}
+\bibcite{Jiang2022}{25}
+\bibcite{Jimenez1999}{26}
+\bibcite{Jordahl2021}{27}
+\bibcite{Ketzler2020}{28}
+\bibcite{Kumar2020}{29}
+\bibcite{Lateb2016}{30}
+\bibcite{Li2020}{31}
+\bibcite{Mandal2022}{32}
+\bibcite{MoT2022}{33}
+\bibcite{Mokhtarzadeh2021}{34}
+\bibcite{NateraOrozco2022}{35}
+\bibcite{Nowak2013}{36}
+\bibcite{Oke1988}{37}
+\bibcite{Peng2023}{38}
+\bibcite{RedmonFarhadi2018}{39}
+\bibcite{Ren2021}{40}
+\bibcite{Rowe2020}{41}
+\bibcite{Seibert2000}{42}
+\bibcite{Shahat2021}{43}
+\bibcite{Shafique2023}{44}
+\bibcite{Stull1988}{45}
+\bibcite{Tominaga2011}{46}
+\bibcite{Ultralytics2023}{47}
+\bibcite{Vardoulakis2003}{48}
+\bibcite{WHO2021}{49}
+\bibcite{XieCastro2006}{50}
+\bibcite{Zhang2022}{51}
+\bibcite{Zhong2021}{52}
+\gdef \@abspage@last{22}
